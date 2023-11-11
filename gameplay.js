@@ -52,10 +52,17 @@ diceRoll.addEventListener("click", function () {
 
 // functionality when hold button clicked
 holdBtn.addEventListener("click", function () {
-  if (true) {
-    playerScore[activePlayer] += score;
-    document.getElementById(`score--${activePlayer}`).textContent =
-      playerScore[activePlayer];
+  playerScore[activePlayer] += score;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    playerScore[activePlayer];
+  if (playerScore[activePlayer] >= 10) {
+    document.getElementById(`score--${activePlayer}`).textContent = "WINS 🎉";
+    document.getElementById(`score--${activePlayer}`).style.fontSize = "6rem";
+
+    // disables buttons once game won
+    diceRoll.setAttribute("disabled", "");
+    holdBtn.setAttribute("disabled", "");
+  } else {
     switchPlayer();
   }
 });

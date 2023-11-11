@@ -1,22 +1,36 @@
 "use strict";
 
 const diceRoll = document.querySelector(".btn--roll");
+const holdBtn = document.querySelector(".btn--hold");
 const dice = document.querySelector(".dice");
 const player0 = document.querySelector(".player--0");
 const player1 = document.querySelector(".player--1");
 
 let activePlayer = 0;
 let roll = 0;
+let score = 0;
+let playerScore = [0, 0];
 
 // Calculates the score depending on active player
 let currentPlayerScore = function (player) {
   if (player == 0) {
-    let score = document.getElementById("current--0").textContent;
+    score = document.getElementById("current--0").textContent;
     document.getElementById("current--0").textContent = Number(score) + roll;
+    score = Number(score) + roll;
   } else {
-    let score = document.getElementById("current--1").textContent;
+    score = document.getElementById("current--1").textContent;
     document.getElementById("current--1").textContent = Number(score) + roll;
+    score = Number(score) + roll;
   }
+};
+
+// function to switch player
+const switchPlayer = function () {
+  score = 0;
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  activePlayer == 0 ? (activePlayer = 1) : (activePlayer = 0);
+  player0.classList.toggle("player--active");
+  player1.classList.toggle("player--active");
 };
 
 // functionality when roll dice btn clicked
@@ -32,9 +46,16 @@ diceRoll.addEventListener("click", function () {
     currentPlayerScore(activePlayer);
   } else {
     // changes active player if 1 rolled
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    activePlayer == 0 ? (activePlayer = 1) : (activePlayer = 0);
-    player0.classList.toggle("player--active");
-    player1.classList.toggle("player--active");
+    switchPlayer();
+  }
+});
+
+// functionality when hold button clicked
+holdBtn.addEventListener("click", function () {
+  if (true) {
+    playerScore[activePlayer] += score;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      playerScore[activePlayer];
+    switchPlayer();
   }
 });

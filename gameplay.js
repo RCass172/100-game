@@ -2,6 +2,7 @@
 
 const diceRoll = document.querySelector(".btn--roll");
 const holdBtn = document.querySelector(".btn--hold");
+const newGame = document.querySelector(".btn--new");
 const dice = document.querySelector(".dice");
 const player0 = document.querySelector(".player--0");
 const player1 = document.querySelector(".player--1");
@@ -29,8 +30,7 @@ const switchPlayer = function () {
   score = 0;
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   activePlayer == 0 ? (activePlayer = 1) : (activePlayer = 0);
-  player0.classList.toggle("player--active");
-  player1.classList.toggle("player--active");
+  togglePlayers();
 };
 
 // functionality when roll dice btn clicked
@@ -66,3 +66,27 @@ holdBtn.addEventListener("click", function () {
     switchPlayer();
   }
 });
+
+const togglePlayers = function () {
+  player0.classList.toggle("player--active");
+  player1.classList.toggle("player--active");
+};
+
+// resets game
+const reset = function () {
+  roll = 0;
+  score = 0;
+  playerScore = [0, 0];
+  activePlayer = 0;
+  document.getElementById(`score--0`).textContent = 0;
+  document.getElementById(`score--1`).textContent = 0;
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  diceRoll.removeAttribute("disabled");
+  holdBtn.removeAttribute("disabled");
+
+  // toggles back to player 1
+  if (player1.classList.contains("player--active")) togglePlayers();
+};
+
+// calls reset when new game clicked
+newGame.addEventListener("click", reset);

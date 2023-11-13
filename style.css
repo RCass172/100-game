@@ -144,7 +144,8 @@ main {
   top: 46.1rem;
 }
 .btn--play {
-  top: 35rem;
+  margin-bottom: 20px;
+  bottom: 0;
 }
 
 .btn:active {

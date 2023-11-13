@@ -99,6 +99,11 @@ main {
   font-size: 3.5rem;
 }
 
+.playerEntry {
+  color: rgba(255, 255, 255, 0.6);
+  padding-top: 10px;
+}
+
 /* ABSOLUTE POSITIONED ELEMENTS */
 .btn {
   position: absolute;
@@ -139,7 +144,7 @@ main {
   top: 46.1rem;
 }
 .btn--play {
-  top: 17rem;
+  top: 37rem;
 }
 
 .btn:active {

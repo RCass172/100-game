@@ -55,7 +55,7 @@ holdBtn.addEventListener("click", function () {
   playerScore[activePlayer] += score;
   document.getElementById(`score--${activePlayer}`).textContent =
     playerScore[activePlayer];
-  if (playerScore[activePlayer] >= 10) {
+  if (playerScore[activePlayer] >= 100) {
     document.getElementById(`score--${activePlayer}`).textContent = "WINS 🎉";
     document.getElementById(`score--${activePlayer}`).style.fontSize = "6rem";
 

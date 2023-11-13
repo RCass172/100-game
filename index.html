@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=1024, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <title>100 Game</title>
@@ -26,16 +26,27 @@
           <p class="current-score" id="current--1">0</p>
         </div>
         <div class="modal">
-          <h3>Enter Player One</h3>
+          <h3><u>Rules</u></h3>
+          <p>1. First player that reaches total score of 100 wins</p>
+          <p>2. Roll the dice to add to your current score</p>
+          <p>
+            3. Be carefull! Roll a 1 and you lose all your current score and
+            it's the next players turn!
+          </p>
+          <p>
+            4. Hold to save your current score to your total score and end your
+            turn
+          </p>
+          <h3 class="playerEntry">Enter Player One</h3>
           <input type="string" class="playerOne" />
-          <h3>Enter Player Two</h3>
+          <h3 class="playerEntry">Enter Player Two</h3>
           <input type="string" class="playerTwo" />
           <button class="btn btn--play">🕹Play</button>
         </div>
       </section>
 
       <img src="imgs/dice-5.png" alt="Playing dice" class="dice" />
-      <button class="btn btn--new">✨ New game ✨</button>
+      <button class="btn btn--new">✨ New game</button>
       <button class="btn btn--roll">🎲 Roll dice</button>
       <button class="btn btn--hold">📥 Hold</button>
     </main>

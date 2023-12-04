@@ -1,6 +1,6 @@
 <h1 align="center"><b>100 Game</b></h1>
 
-![webpage layout on device](imgs/game01.png)
+![webpage layout on device](imgs/game01.PNG)
 
 [Click Here To View Live Project](https://rcass172.github.io/100-game/)
 
@@ -12,7 +12,7 @@ The primary goal of this project was to complete a challenge from [The Complete 
 
 ### Extra
 
-As an extra I created a modal which displays when page is loaded. This shows the rules of the game, along with allowing players to enter a name. If no name is entered a default "Player 1" or "Player 2" will be displayed. ![modal](imgs/game02.png)
+As an extra I created a modal which displays when page is loaded. This shows the rules of the game, along with allowing players to enter a name. If no name is entered a default "Player 1" or "Player 2" will be displayed. ![modal](imgs/game02.PNG)
 
 ## Deployment
 
